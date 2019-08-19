@@ -11,8 +11,8 @@ namespace ConsoleApp1
         public static void Run()
         {
             Console.WriteLine("Enter the number of task:");
-            var user_input = Console.ReadLine();
-            int homework_nr = Int32.Parse(user_input);
+
+            int homework_nr = Utilities.Enter_int();
             if (homework_nr == 1)
             {
                 Task_one();
@@ -25,18 +25,21 @@ namespace ConsoleApp1
             {
                 Task_three();
             }
-            else
+            else if(homework_nr==4)
             {
                 Task_four();
+            }
+            else
+            {
+                Console.WriteLine("No such task.");
             }
             
         }
         public static void Task_one()
         {
             Console.WriteLine("Enter your age:");
-            var user_input = Console.ReadLine();
 
-            int age = Int32.Parse(user_input);
+            int age = Utilities.Enter_int();
 
             if (age >= 0 && age <= 14)
             {
@@ -63,8 +66,8 @@ namespace ConsoleApp1
         public static void Task_two()
         {
             Console.WriteLine("Enter radius:");
-            var user_input = Console.ReadLine();
-            double radius = double.Parse(user_input);
+
+            double radius = Utilities.Enter_double();
             const double pi = 3.14;
             double perimeter = 2 * pi * radius;
             double aria = pi * radius * radius;
@@ -88,8 +91,8 @@ namespace ConsoleApp1
             Console.WriteLine("3.Cheese - 65 lei");
             Console.WriteLine("4.Water - 10 lei");
             Console.WriteLine("Choose products:");
-            var user_input = Console.ReadLine();
-            int option = Int32.Parse(user_input);
+
+            int option = Utilities.Enter_int();
             int price = 0;
             switch (option)
             {
@@ -110,8 +113,8 @@ namespace ConsoleApp1
                     break;
             }
             Console.WriteLine("Please enter amount of the product:");
-            user_input = Console.ReadLine();
-            int amout = Int32.Parse(user_input);
+
+            int amout = Utilities.Enter_int();
             double total_price = amout * price * 1.2;
             Console.WriteLine("The total price with TVA is:" + total_price);
             return total_price;
@@ -119,8 +122,8 @@ namespace ConsoleApp1
         public static void Task_four()
         {
             Console.WriteLine("Please enter the number:");
-            var user_input = Console.ReadLine();
-            int number = Int32.Parse(user_input);
+
+            int number = Utilities.Enter_int();
 
             //if is positive
             if (number >= 0)

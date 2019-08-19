@@ -10,8 +10,8 @@ namespace ConsoleApp1
     {
         public static void Run() {
             Console.WriteLine("Please enter number of task:");
-            var user_input = Console.ReadLine();
-            int n = Int32.Parse(user_input);
+
+            int n = Utilities.Enter_int();
             if (n == 1)
             {
                 Task_one();
@@ -24,16 +24,20 @@ namespace ConsoleApp1
             {
                 Task_three();
             }
-            else
+            else if (n == 4)
             {
                 Task_four();
+            }
+            else
+            {
+                Console.WriteLine("No such task.");
             }
         }
         public static void Task_one()
         {
             int[] array = { 3, 61, 9, 15, 57, 36, -4, 23, 18 };
             Console.WriteLine("Array:");
-            Display_array(array);
+            Utilities.Display_array(array);
             Console.WriteLine("Array after bubble sort:");
             Bubble_sort(array);
             Console.WriteLine("Array after shaker sort:");
@@ -62,7 +66,7 @@ namespace ConsoleApp1
                 }
                 if (!swapped) break;
             }
-            Display_array(array);
+            Utilities.Display_array(array);
         }
 
         private static void Bubble_sort(int[] array)
@@ -83,25 +87,10 @@ namespace ConsoleApp1
                 }
                 n = newn;
             }
-            Display_array(array);
+            Utilities.Display_array(array);
         }
 
-        private static void Display_array(int[] array)
-        {
-            for (int x = 0; x < array.Length; x++)
-            {
-                Console.Write(array[x] + " ");
-            }
-            Console.WriteLine("");
-        }
-        private static void Display_array(char[] array)
-        {
-            for (int x = 0; x < array.Length; x++)
-            {
-                Console.Write(array[x]);
-            }
-            Console.WriteLine("");
-        }
+
 
         public static void Task_two()
         {
@@ -135,13 +124,13 @@ namespace ConsoleApp1
                 array[array.Length - 1 - x] = c;
             }
             Console.WriteLine("Reversed word:");
-            Display_array(array);
+            Utilities.Display_array(array);
         }
         public static void Task_four ()
         {
             Console.WriteLine("Please enter the number of products you want to buy:");
-            string user_input = Console.ReadLine();
-            int n = Int32.Parse(user_input);
+
+            int n = Utilities.Enter_int();
             double sum = 0;
             for (int x = 0; x < n; x++)
             {
