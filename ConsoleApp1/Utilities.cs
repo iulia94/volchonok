@@ -41,11 +41,11 @@ namespace ConsoleApp1
         }
         public static void Display_array(int[] array)
         {
-            for (int x = 0; x < array.Length; x++)
+            for (int x = 0; x < array.Length; x++) //x - index
             {
                 Console.Write(array[x] + " ");
             }
-            Console.WriteLine("");
+            Console.WriteLine(""); // enter
         }
         public static void Display_array(char[] array)
         {

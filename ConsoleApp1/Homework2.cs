@@ -31,6 +31,7 @@ namespace ConsoleApp1
             else
             {
                 Console.WriteLine("No such task.");
+                Run();
             }
         }
         public static void Task_one()

@@ -13,6 +13,7 @@ namespace IuIuIu
                 Console.WriteLine("Please select Homework:");
 
                 int n = Utilities.Enter_int();
+
                 if (n == 1)
                 {
                     Homework1.Run();
@@ -24,15 +25,11 @@ namespace IuIuIu
                 else
                 {
                     Console.WriteLine("No such Homework!");
+                    continue;
                 }
-                Console.WriteLine("Would you like to continue? Enter 'Y' to continue.");
-                var user_input = Console.ReadLine();
-                if (user_input != "Y")
-                {
-                    h = false;
-                }
-            }  
-           
+
+            }
+
         }
         
     }

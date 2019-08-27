@@ -32,6 +32,7 @@ namespace ConsoleApp1
             else
             {
                 Console.WriteLine("No such task.");
+                Run();
             }
             
         }
@@ -86,6 +87,16 @@ namespace ConsoleApp1
         }
         public static double Task_three()
         {
+            double price = ChooseProduct();
+            Console.WriteLine("Please enter amount of the product:");
+
+            int amout = Utilities.Enter_int();
+            const double TVA = 0.2;
+            double total_price = amout * price + (amout * price *TVA);
+            Console.WriteLine("The total price with TVA is:" + total_price);
+            return total_price;
+        }
+        private static double ChooseProduct() {
             Console.WriteLine("1.Bread - 5 lei");
             Console.WriteLine("2.Tea - 25 lei");
             Console.WriteLine("3.Cheese - 65 lei");
@@ -93,7 +104,7 @@ namespace ConsoleApp1
             Console.WriteLine("Choose products:");
 
             int option = Utilities.Enter_int();
-            int price = 0;
+            double price = 0;
             switch (option)
             {
                 case 1:
@@ -109,16 +120,13 @@ namespace ConsoleApp1
                     price = 10;
                     break;
                 default:
-                    Console.WriteLine("Product not found");
+                    Console.WriteLine("Product not found. Please choose again.");
+                    price = ChooseProduct();
                     break;
             }
-            Console.WriteLine("Please enter amount of the product:");
-
-            int amout = Utilities.Enter_int();
-            double total_price = amout * price * 1.2;
-            Console.WriteLine("The total price with TVA is:" + total_price);
-            return total_price;
+            return price;
         }
+
         public static void Task_four()
         {
             Console.WriteLine("Please enter the number:");
@@ -158,7 +166,7 @@ namespace ConsoleApp1
             //if is multiple of 5
             if (number % 5 == 0)
             {
-                Console.WriteLine("The numbet is multiple of 5.");
+                Console.WriteLine("The number is multiple of 5.");
             }
             else Console.WriteLine("The number is not multiple of 5.");
 
