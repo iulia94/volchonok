@@ -27,9 +27,29 @@ namespace IuIuIu
                     Console.WriteLine("No such Homework!");
                     continue;
                 }
+                h = Continue(h);
 
             }
 
+        }
+        private static bool Continue(bool h)
+        {
+            Console.WriteLine("Would you like to continue?(Y/N)");
+            var user_input = Console.ReadLine();
+            if (user_input.ToLower() == "y")
+            {
+                h = true;
+            }
+            else if (user_input.ToLower() == "n")
+            {
+                h = false;
+            }
+            else
+            {
+                Console.WriteLine("No such option. Try again.");
+                h = Continue(h);
+            }
+            return h;
         }
         
     }
